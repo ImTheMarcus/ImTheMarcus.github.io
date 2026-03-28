@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Your Name</title>
+  <meta name="description" content="Engineering projects spanning robotics, mechanical design, and electronic systems." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a href="../index.html" class="nav-logo">YN<span>.eng</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="../index.html#work">Experience</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Hire Me →</a>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-inner">
+      <p class="section-label reveal">Portfolio</p>
+      <h1 class="section-title reveal" style="font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1rem;">
+        All Projects
+      </h1>
+      <p class="section-subtitle reveal" style="margin-bottom: 0;">
+        From concept sketches to working hardware — everything I've designed, built, and shipped.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── PROJECTS CONTENT ── -->
+  <section style="padding-top: 2rem;">
+    <div class="section-inner">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="robotics">Robotics</button>
+        <button class="filter-btn" data-filter="mechanical">Mechanical</button>
+        <button class="filter-btn" data-filter="electronics">Electronics</button>
+        <button class="filter-btn" data-filter="software">Software</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-full-grid" id="projects-grid">
+
+        <div class="project-full-card reveal" data-category="robotics">
+          <div class="project-full-thumb">🦾</div>
+          <div class="project-full-body">
+            <p class="project-full-tag">Robotics</p>
+            <div class="project-full-header">
+              <h2 class="project-full-title">6-DOF Robotic Arm</h2>
+              <span class="project-full-status">Completed</span>
+            </div>
+            <p class="project-full-desc">
+              Designed and manufactured a 6-axis articulated robotic arm with custom servo
+              controllers and a full ROS2 software stack. Capable of pick-and-place tasks
+              with sub-millimeter repeatability.
+            </p>
+            <ul class="project-full-highlights">
+              <li>Custom PCB motor driver with current sensing</li>
+              <li>Forward/inverse kinematics solver in C++</li>
+              <li>ROS2 MoveIt2 integration for motion planning</li>
+              <li>3D-printed structural components (PETG/CF)</li>
+            </ul>
+          </div>
+          <div class="project-full-footer">
+            <div class="project-card-stack">
+              <span class="stack-badge">ROS2</span>
+              <span class="stack-badge">C++</span>
+              <span class="stack-badge">SolidWorks</span>
+              <span class="stack-badge">KiCad</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/yourusername" target="_blank" class="project-link">GitHub</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-full-card reveal reveal-delay-1" data-category="robotics">
+          <div class="project-full-thumb">🛞</div>
+          <div class="project-full-body">
+            <p class="project-full-tag">Robotics · Mechanical</p>
+            <div class="project-full-header">
+              <h2 class="project-full-title">Autonomous Mobile Platform</h2>
+              <span class="project-full-status">Completed</span>
+            </div>
+            <p class="project-full-desc">
+              A differential-drive robot platform designed for indoor navigation research.
+              Features a custom-welded aluminum chassis, onboard compute (Jetson Nano),
+              and LiDAR-based autonomous navigation.
+            </p>
+            <ul class="project-full-highlights">
+              <li>Welded aluminum chassis designed in Fusion 360</li>
+              <li>SLAM-based mapping with Nav2 stack</li>
+              <li>Custom power distribution board</li>
+              <li>Integrated IMU + wheel odometry fusion</li>
+            </ul>
+          </div>
+          <div class="project-full-footer">
+            <div class="project-card-stack">
+              <span class="stack-badge">ROS</span>
+              <span class="stack-badge">SLAM</span>
+              <span class="stack-badge">Fusion 360</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/yourusername" target="_blank" class="project-link">GitHub</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-full-card reveal reveal-delay-2" data-category="electronics">
+          <div class="project-full-thumb">⚡</div>
+          <div class="project-full-body">
+            <p class="project-full-tag">Electronics</p>
+            <div class="project-full-header">
+              <h2 class="project-full-title">BLDC Motor Controller PCB</h2>
+              <span class="project-full-status">Completed</span>
+            </div>
+            <p class="project-full-desc">
+              4-layer PCB for high-power brushless DC motor control. Implements FOC (field-oriented
+              control) with embedded STM32 microcontroller, CAN bus, and full thermal protection.
+            </p>
+            <ul class="project-full-highlights">
+              <li>Field-Oriented Control (FOC) algorithm</li>
+              <li>STM32G4 with hardware floating point</li>
+              <li>CAN FD communication interface</li>
+              <li>Overcurrent, overvoltage & thermal protection</li>
+            </ul>
+          </div>
+          <div class="project-full-footer">
+            <div class="project-card-stack">
+              <span class="stack-badge">KiCad</span>
+              <span class="stack-badge">STM32</span>
+              <span class="stack-badge">CAN FD</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/yourusername" target="_blank" class="project-link">GitHub</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-full-card reveal" data-category="mechanical">
+          <div class="project-full-thumb">🔩</div>
+          <div class="project-full-body">
+            <p class="project-full-tag">Mechanical Design</p>
+            <div class="project-full-header">
+              <h2 class="project-full-title">Precision Gripper Assembly</h2>
+              <span class="project-full-status wip">In Progress</span>
+            </div>
+            <p class="project-full-desc">
+              A compliant two-finger gripper designed for handling delicate objects.
+              Uses a flexure-based mechanism to achieve soft, controlled grasping without
+              complex actuation.
+            </p>
+            <ul class="project-full-highlights">
+              <li>Flexure-based compliant mechanism</li>
+              <li>FEA-validated stress distribution</li>
+              <li>Single actuator design</li>
+              <li>SLA-printed in Tough Resin</li>
+            </ul>
+          </div>
+          <div class="project-full-footer">
+            <div class="project-card-stack">
+              <span class="stack-badge">SolidWorks</span>
+              <span class="stack-badge">FEA</span>
+              <span class="stack-badge">SLA Print</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-full-card reveal reveal-delay-1" data-category="electronics software">
+          <div class="project-full-thumb">📡</div>
+          <div class="project-full-body">
+            <p class="project-full-tag">Electronics · Software</p>
+            <div class="project-full-header">
+              <h2 class="project-full-title">Wireless Sensor Network</h2>
+              <span class="project-full-status">Completed</span>
+            </div>
+            <p class="project-full-desc">
+              ESP32-based sensor nodes with custom PCBs that collect environmental data
+              and transmit over MQTT to a central dashboard. Designed for industrial monitoring use.
+            </p>
+            <ul class="project-full-highlights">
+              <li>Custom ESP32 PCB with LiPo charging</li>
+              <li>MQTT over WiFi / LoRa fallback</li>
+              <li>Node-RED dashboard visualization</li>
+              <li>Deep sleep for battery life optimization</li>
+            </ul>
+          </div>
+          <div class="project-full-footer">
+            <div class="project-card-stack">
+              <span class="stack-badge">ESP32</span>
+              <span class="stack-badge">MQTT</span>
+              <span class="stack-badge">KiCad</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/yourusername" target="_blank" class="project-link">GitHub</a>
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-full-card reveal reveal-delay-2" data-category="mechanical robotics">
+          <div class="project-full-thumb">🚁</div>
+          <div class="project-full-body">
+            <p class="project-full-tag">Mechanical · Robotics</p>
+            <div class="project-full-header">
+              <h2 class="project-full-title">Custom UAV Frame</h2>
+              <span class="project-full-status">Completed</span>
+            </div>
+            <p class="project-full-desc">
+              Designed a carbon fiber quadrotor frame optimized for payload capacity and
+              vibration isolation. Includes integrated motor mount and gimbal isolation system.
+            </p>
+            <ul class="project-full-highlights">
+              <li>Carbon fiber tube & plate construction</li>
+              <li>FEA-optimized arm geometry</li>
+              <li>Vibration-isolated electronics bay</li>
+              <li>Modular payload attachment system</li>
+            </ul>
+          </div>
+          <div class="project-full-footer">
+            <div class="project-card-stack">
+              <span class="stack-badge">Fusion 360</span>
+              <span class="stack-badge">Carbon Fiber</span>
+              <span class="stack-badge">FEA</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p class="footer-copy">© 2025 Your Name — Mechanical Engineer</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // ── PROJECT FILTER ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-full-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          const cats = card.dataset.category || '';
+          const show = filter === 'all' || cats.includes(filter);
+          card.style.display = show ? 'block' : 'none';
+          if (show) {
+            card.style.animation = 'none';
+            card.offsetHeight;
+            card.style.animation = '';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
