@@ -6,13 +6,13 @@
 const PORTFOLIO = {
 
   // ── PERSONAL ──────────────────────────────────────────────
-  name:       "Your Name",
-  initials:   "YN",
+  name:       "Marcus Imbigula",
+  initials:   "MGI",
   role:       "Mechanical Engineer",
   location:   "Nairobi, Kenya",
-  email:      "your@email.com",
-  github:     "https://github.com/yourusername",
-  linkedin:   "https://linkedin.com/in/yourprofile",
+  email:      "imbigulamarcus99@gmail.com",
+  github:     "https://github.com/ImTheMarcus",
+  linkedin:   "https://linkedin.com/in/imbigula",
   bio: [
     "I'm a Mechanical Engineer with a deep focus on robotics, mechanical design, and electronic systems integration. With hands-on experience across the full engineering stack — from CAD modeling and FEA simulation to PCB design and firmware — I bring ideas from concept to working prototype.",
     "My work sits at the intersection of disciplines: writing code that controls hardware I've designed, running simulations that inform my builds, and iterating fast with a bias toward physical results."
@@ -23,6 +23,7 @@ const PORTFOLIO = {
   typingPhrases: [
     "Mechanical Engineer",
     "Robotics Designer",
+    "Electronics Instructor",
     "Electronics Enthusiast",
     "Mechanical Systems Architect",
     "CAD & Simulation Expert"
@@ -30,8 +31,8 @@ const PORTFOLIO = {
 
   // ── STATS (hero section) ──────────────────────────────────
   stats: [
-    { number: 5,   suffix: "+", label: "Years Experience" },
-    { number: 20,  suffix: "+", label: "Projects Delivered" },
+    { number: 2,   suffix: "+", label: "Years Experience" },
+    { number: 5,  suffix: "+", label: "Projects Delivered" },
     { number: 3,   suffix: "",  label: "Disciplines" },
     { number: 100, suffix: "%", label: "Passion" }
   ],
@@ -96,23 +97,30 @@ const PORTFOLIO = {
   // ── WORK HISTORY ──────────────────────────────────────────
   work: [
     {
-      period:  "2022 — Present",
-      role:    "Mechanical & Robotics Engineer",
-      company: "Company Name · Full-time",
+      period:  "May 2025 — Present",
+      role:    "Robotics & Electronics Instructor",
+      company: "Ubunifu College · Full-time",
       desc:    "Leading design of automated mechanical systems for industrial applications. Responsible for end-to-end engineering: from concept design and FEA simulation to PCB layout, firmware, and system integration.",
       tags:    ["SolidWorks", "ROS2", "Altium", "Team Lead"]
     },
     {
-      period:  "2020 — 2022",
-      role:    "Mechanical Design Engineer",
-      company: "Previous Company · Full-time",
+      period:  "Jan 2024 — May 2024",
+      role:    "Mechanical Engineering Internship",
+      company: "Kenya Ports Authority · Internship",
       desc:    "Designed precision mechanical components for aerospace applications. Ran FEA studies, managed vendor relationships, and ensured GD&T compliance across multi-part assemblies.",
       tags:    ["FEA", "GD&T", "Fusion 360", "Aerospace"]
     },
     {
-      period:  "2019 — 2020",
-      role:    "Engineering Intern",
-      company: "Internship Company · Internship",
+      period:  "Oct 2023 — Dec 2023",
+      role:    "Mechanical Engineering Intern",
+      company: "KIRDI · Internship",
+      desc:    "Supported senior engineers on R&D projects. Built test rigs, wrote data acquisition scripts, and contributed to the mechanical design of a prototype UAV frame.",
+      tags:    ["Python", "Prototyping", "UAV"]
+    },
+    {
+      period:  "2021 — 2022",
+      role:    "IBL Attachment",
+      company: "The Technical University of Kenya · Attachment",
       desc:    "Supported senior engineers on R&D projects. Built test rigs, wrote data acquisition scripts, and contributed to the mechanical design of a prototype UAV frame.",
       tags:    ["Python", "Prototyping", "UAV"]
     }
