@@ -1,4 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+/* ── LOCAL FONTS ── */
+
+@font-face {
+  font-family: 'LimitBreak';
+  src: url('../fonts/Limit Break.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrafBold';
+  src: url('../fonts/GrafBoldBold.woff2') format('woff2'),
+       url('../fonts/GrafBoldBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrafRoundish';
+  src: url('../fonts/GrafRoundishMedium.woff2') format('woff2'),
+       url('../fonts/GrafRoundishMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrafOblique';
+  src: url('../fonts/GrafObliqueItalic.woff2') format('woff2'),
+       url('../fonts/GrafObliqueItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrafCirculumBricks';
+  src: url('../fonts/GrafCirculumBricks.woff2') format('woff2'),
+       url('../fonts/GrafCirculumBricks.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../fonts/CreatoDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../fonts/CreatoDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../fonts/CreatoDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../fonts/CreatoDisplay-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../fonts/CreatoDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('../fonts/CaviarDreams.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('../fonts/CaviarDreams_Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('../fonts/CaviarDreams_Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('../fonts/CaviarDreams_BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   --bg: #080c10;
@@ -13,9 +129,9 @@
   --text: #e8edf3;
   --text2: #8a9ab0;
   --text3: #4a5a6e;
-  --font-display: 'Syne', sans-serif;
-  --font-mono: 'Space Mono', monospace;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'LimitBreak', 'CreatoDisplay', sans-serif;
+  --font-mono: 'GrafRoundish', 'CaviarDreams', sans-serif;
+  --font-body: 'CreatoDisplay', 'CaviarDreams', sans-serif;
   --radius: 4px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
