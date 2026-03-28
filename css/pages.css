@@ -300,8 +300,8 @@
   transition: color var(--transition);
 }
 .recent-post:last-child { border-bottom: none; }
-.recent-post:hover .recent-post-title { color: var(--accent); }
 .recent-post-title { font-size: 0.88rem; font-weight: 500; transition: color var(--transition); }
+.recent-post:hover .recent-post-title { color: var(--accent); }
 .recent-post-date {
   font-family: var(--font-mono);
   font-size: 0.62rem;
