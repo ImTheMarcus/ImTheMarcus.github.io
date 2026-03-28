@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Your Name</title>
+  <meta name="description" content="Engineering thoughts, build logs, and technical writing." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a href="../index.html" class="nav-logo">YN<span>.eng</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="../index.html#work">Experience</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Hire Me →</a>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-inner">
+      <p class="section-label reveal">Writing</p>
+      <h1 class="section-title reveal" style="font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1rem;">
+        Blog
+      </h1>
+      <p class="section-subtitle reveal" style="margin-bottom: 0;">
+        Build logs, technical deep-dives, and honest lessons from the engineering trenches.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── BLOG CONTENT ── -->
+  <section style="padding-top: 2rem;">
+    <div class="section-inner">
+      <div class="blog-full-grid">
+
+        <!-- Main Posts -->
+        <div class="blog-main-list">
+
+          <a href="#" class="blog-post-card reveal">
+            <div class="blog-post-meta">
+              <span class="blog-cat">Robotics</span>
+              <span class="blog-date">March 15, 2025</span>
+            </div>
+            <h2 class="blog-post-title">How I Built a 6-DOF Arm from Scratch: Lessons Learned</h2>
+            <p class="blog-post-excerpt">
+              Designing a robotic arm is part mechanical puzzle, part electrical headache, and fully
+              humbling. Here's an honest breakdown of what went wrong, what worked, and what I'd do
+              differently — from the linkage geometry to the motor driver PCB. There were three
+              complete redesigns and one magic smoke incident.
+            </p>
+            <div class="blog-post-footer">
+              <span class="blog-read-more">Read Article →</span>
+              <span class="blog-reading-time">12 min read</span>
+            </div>
+          </a>
+
+          <a href="#" class="blog-post-card reveal">
+            <div class="blog-post-meta">
+              <span class="blog-cat">Electronics</span>
+              <span class="blog-date">January 22, 2025</span>
+            </div>
+            <h2 class="blog-post-title">PCB Layout Rules I Wish I Knew Earlier</h2>
+            <p class="blog-post-excerpt">
+              Ground planes, trace width, and why impedance matching isn't just for RF engineers.
+              After three years of designing boards ranging from simple Arduino shields to 4-layer
+              motor controllers, here are the layout principles I now consider non-negotiable.
+            </p>
+            <div class="blog-post-footer">
+              <span class="blog-read-more">Read Article →</span>
+              <span class="blog-reading-time">8 min read</span>
+            </div>
+          </a>
+
+          <a href="#" class="blog-post-card reveal">
+            <div class="blog-post-meta">
+              <span class="blog-cat">Mechanical</span>
+              <span class="blog-date">November 8, 2024</span>
+            </div>
+            <h2 class="blog-post-title">FEA Is Not a Magic Box</h2>
+            <p class="blog-post-excerpt">
+              Garbage in, garbage out. Finite Element Analysis is one of the most powerful tools
+              in a mechanical engineer's toolkit — and one of the most misused. Here's how to set
+              up your simulations so the results actually mean something, and the questions you
+              should always ask before trusting a solver output.
+            </p>
+            <div class="blog-post-footer">
+              <span class="blog-read-more">Read Article →</span>
+              <span class="blog-reading-time">9 min read</span>
+            </div>
+          </a>
+
+          <a href="#" class="blog-post-card reveal">
+            <div class="blog-post-meta">
+              <span class="blog-cat">Robotics</span>
+              <span class="blog-date">September 3, 2024</span>
+            </div>
+            <h2 class="blog-post-title">Getting Started with ROS2: A Real Engineer's Perspective</h2>
+            <p class="blog-post-excerpt">
+              Most ROS2 tutorials assume you have a pristine Ubuntu install, infinite patience, and
+              no deadlines. This isn't that tutorial. Here's how I actually got productive with ROS2
+              on a real project, with all the workarounds I needed along the way.
+            </p>
+            <div class="blog-post-footer">
+              <span class="blog-read-more">Read Article →</span>
+              <span class="blog-reading-time">15 min read</span>
+            </div>
+          </a>
+
+          <a href="#" class="blog-post-card reveal">
+            <div class="blog-post-meta">
+              <span class="blog-cat">Design</span>
+              <span class="blog-date">July 17, 2024</span>
+            </div>
+            <h2 class="blog-post-title">The Case for Over-Engineering Your Prototypes</h2>
+            <p class="blog-post-excerpt">
+              Everyone says "keep it simple." But there's a strong argument for building your first
+              prototype to a higher spec than you think you need — especially when you're still
+              learning what the actual requirements are.
+            </p>
+            <div class="blog-post-footer">
+              <span class="blog-read-more">Read Article →</span>
+              <span class="blog-reading-time">6 min read</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+
+          <div class="sidebar-widget reveal">
+            <h3 class="sidebar-widget-title">Topics</h3>
+            <div class="sidebar-tags">
+              <span class="sidebar-tag">Robotics</span>
+              <span class="sidebar-tag">Mechanical</span>
+              <span class="sidebar-tag">Electronics</span>
+              <span class="sidebar-tag">PCB Design</span>
+              <span class="sidebar-tag">ROS / ROS2</span>
+              <span class="sidebar-tag">FEA</span>
+              <span class="sidebar-tag">CAD</span>
+              <span class="sidebar-tag">Embedded</span>
+              <span class="sidebar-tag">Design</span>
+              <span class="sidebar-tag">Career</span>
+            </div>
+          </div>
+
+          <div class="sidebar-widget reveal">
+            <h3 class="sidebar-widget-title">Recent Posts</h3>
+            <div class="recent-post">
+              <span class="recent-post-title">6-DOF Arm from Scratch</span>
+              <span class="recent-post-date">March 2025</span>
+            </div>
+            <div class="recent-post">
+              <span class="recent-post-title">PCB Layout Rules</span>
+              <span class="recent-post-date">January 2025</span>
+            </div>
+            <div class="recent-post">
+              <span class="recent-post-title">FEA Is Not a Magic Box</span>
+              <span class="recent-post-date">November 2024</span>
+            </div>
+            <div class="recent-post">
+              <span class="recent-post-title">Getting Started with ROS2</span>
+              <span class="recent-post-date">September 2024</span>
+            </div>
+          </div>
+
+          <div class="sidebar-widget reveal">
+            <h3 class="sidebar-widget-title">Get Updates</h3>
+            <p style="font-size:0.85rem; color:var(--text2); margin-bottom:1rem; line-height:1.6;">
+              New posts drop roughly monthly. No spam — just engineering content.
+            </p>
+            <input type="email" class="form-input" placeholder="your@email.com" style="margin-bottom:0.6rem;" />
+            <button class="btn-primary" style="width:100%; justify-content:center;">Subscribe →</button>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p class="footer-copy">© 2025 Your Name — Mechanical Engineer</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
