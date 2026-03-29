@@ -11,12 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const set  = (id, html) => { if (el(id)) el(id).innerHTML = html; };
   const text = (id, val)  => { if (el(id)) el(id).textContent = val; };
 
-  // ── NAV logo ────────────────────────────────────────────
+  // ── PAGE TITLE ──────────────────────────────────────────
+  document.title = document.title.replace('Your Name', D.name);
+
+  // ── NAV LOGO ────────────────────────────────────────────
   document.querySelectorAll('.nav-logo').forEach(l => {
     l.innerHTML = `${D.initials}<span>.eng</span>`;
   });
 
-  // ── HERO ────────────────────────────────────────────────
+  // ── HERO NAME (split first + last name across two lines) ─
+  const nameParts = D.name.trim().split(' ');
+  const firstName = nameParts[0];
+  const lastName  = nameParts.slice(1).join(' ') || '';
+  set('hero-name', `
+    <span class="line">${firstName}</span>
+    <span class="line"><span class="accent-word">${lastName}</span></span>
+  `);
+
+  // ── HERO DESC & STATS ────────────────────────────────────
   text('hero-desc', D.bio[0]);
 
   set('hero-stats', D.stats.map((s, i) => `
@@ -59,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="project-card-footer">
         <div class="project-card-stack">
-          ${p.stack.slice(0,3).map(s => `<span class="stack-badge">${s}</span>`).join('')}
+          ${p.stack.slice(0, 3).map(s => `<span class="stack-badge">${s}</span>`).join('')}
         </div>
         <span class="project-card-arrow">→</span>
       </div>
@@ -144,13 +156,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── CONTACT LINKS ───────────────────────────────────────
   document.querySelectorAll('.contact-email').forEach(l => {
-    l.href = `mailto:${D.email}`; l.textContent = D.email;
+    l.href = `mailto:${D.email}`;
+    l.textContent = D.email;
   });
   document.querySelectorAll('.contact-github').forEach(l => {
-    l.href = D.github; l.textContent = D.github.replace('https://', '');
+    l.href = D.github;
+    l.textContent = D.github.replace('https://', '');
   });
   document.querySelectorAll('.contact-linkedin').forEach(l => {
-    l.href = D.linkedin; l.textContent = D.linkedin.replace('https://', '');
+    l.href = D.linkedin;
+    l.textContent = D.linkedin.replace('https://', '');
   });
   document.querySelectorAll('.contact-location').forEach(l => {
     l.textContent = D.location;
@@ -160,7 +175,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.footer-copy').forEach(f => {
     f.textContent = `© ${new Date().getFullYear()} ${D.name} — ${D.role}`;
   });
-
-  // ── PAGE TITLE ──────────────────────────────────────────
-  document.title = document.title.replace('Your Name', D.name);
 });
