@@ -78,7 +78,9 @@
   // ── FULL PROJECTS PAGE ──────────────────────────────────
   set('projects-grid', D.projects.map((p, i) => `
     <div class="project-full-card reveal${i % 3 > 0 ? ` reveal-delay-${i % 3}` : ''}"
-         data-category="${p.category}">
+         data-category="${p.category}"
+         onclick="window.location='project-detail.html?id=${i}'"
+         style="cursor:pointer;">
       <div class="project-full-thumb">${p.emoji}</div>
       <div class="project-full-body">
         <p class="project-full-tag">${p.tag}</p>
@@ -96,8 +98,8 @@
           ${p.stack.map(s => `<span class="stack-badge">${s}</span>`).join('')}
         </div>
         <div class="project-links">
-          ${p.github ? `<a href="${p.github}" target="_blank" class="project-link">GitHub</a>` : ''}
-          <a href="${p.link}" class="project-link">Details</a>
+          ${p.github ? `<a href="${p.github}" target="_blank" class="project-link" onclick="event.stopPropagation()">GitHub</a>` : ''}
+          <a href="project-detail.html?id=${i}" class="project-link">Open Project →</a>
         </div>
       </div>
     </div>`).join(''));
