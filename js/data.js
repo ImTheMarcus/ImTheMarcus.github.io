@@ -36,8 +36,6 @@ const PORTFOLIO = {
     { number: 3,   suffix: "",  label: "Disciplines" },
     { number: 100, suffix: "%", label: "Passion" }
   ],
-
-
   // ── ABOUT TAGS ────────────────────────────────────────────
   tags: [
     { label: "Robotics",          accent: true  },
@@ -128,30 +126,9 @@ const PORTFOLIO = {
   ],
 
   // ── PROJECTS ──────────────────────────────────────────────
-  // Required fields: emoji, tag, category, title, status, wip, desc, highlights, stack, github
-  //
-  // Optional fields for the full detail page:
-  //   year:         "2024"
-  //   liveUrl:      "https://yourdemo.com"
-  //   overview:     ["Paragraph 1...", "Paragraph 2..."]   — replaces desc on detail page
-  //   model:        "../assets/models/arm.stl"             — STL or OBJ file path
-  //   code: {
-  //     file:       "../assets/code/arm_controller.cpp",   — load from file
-  //     lang:       "cpp"
-  //   }
-  //   codeSnippet: {
-  //     filename:   "kinematics.cpp",                      — OR paste code directly
-  //     lang:       "cpp",
-  //     content:    `void solve() { ... }`
-  //   }
-  //   images: [                                            — photo gallery
-  //     "../assets/img/project0/photo1.jpg",
-  //     "../assets/img/project0/photo2.jpg"
-  //   ]
-  //
-  // For model/code/images: create an assets/ folder at the repo root,
-  // then subfolders: assets/models/, assets/code/, assets/img/project0/ etc.
-  // Commit those files to GitHub and they will load automatically.
+  // Edit projects here. Optional detail-page fields (add to any project):
+  //   year, liveUrl, overview (array of paragraphs), model (STL path),
+  //   images (array of image paths), code or codeSnippet (see CONTENT-GUIDE.md)
 
   projects: [
     {
@@ -176,9 +153,6 @@ const PORTFOLIO = {
       stack:  ["ROS2", "C++", "SolidWorks", "KiCad"],
       github: "https://github.com/yourusername",
       link:   "#",
-      // model:  "../assets/models/arm.stl",
-      // images: ["../assets/img/project0/photo1.jpg"],
-      // codeSnippet: { filename: "kinematics.cpp", lang: "cpp", content: `// paste code here` }
     },
     {
       emoji:    "🛞",
