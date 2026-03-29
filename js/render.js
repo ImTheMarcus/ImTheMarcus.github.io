@@ -3,7 +3,7 @@
 //  You never need to edit this file.
 // ============================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
   const D = PORTFOLIO;
 
   // ── Helpers ─────────────────────────────────────────────
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     l.innerHTML = `${D.initials}<span>.eng</span>`;
   });
 
-  // ── HERO NAME (split first + last name across two lines) ─
+  // ── HERO NAME ───────────────────────────────────────────
   const nameParts = D.name.trim().split(' ');
   const firstName = nameParts[0];
   const lastName  = nameParts.slice(1).join(' ') || '';
@@ -39,9 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── ABOUT ───────────────────────────────────────────────
   text('about-tagline', D.tagline);
-
   set('about-bio', D.bio.map(p => `<p>${p}</p>`).join(''));
-
   set('about-tags', D.tags.map(t =>
     `<span class="tag${t.accent ? ' accent' : ''}">${t.label}</span>`
   ).join(''));
@@ -175,4 +173,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.footer-copy').forEach(f => {
     f.textContent = `© ${new Date().getFullYear()} ${D.name} — ${D.role}`;
   });
-});
+
+})();
