@@ -24,7 +24,7 @@ navLinkItems.forEach(link => {
 
 // ── ACTIVE NAV LINK ON SCROLL ──
 const sections = document.querySelectorAll('section[id]');
-const observer = new IntersectionObserver((entries) => {
+const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinkItems.forEach(link => {
@@ -34,10 +34,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => sectionObserver.observe(s));
 
 // ── SCROLL REVEAL ──
-const reveals = document.querySelectorAll('.reveal');
+// Exposed globally so render.js can call it after injecting dynamic content
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -47,18 +47,23 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-reveals.forEach(el => revealObserver.observe(el));
+window.observeReveals = () => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    revealObserver.observe(el);
+  });
+};
+
+// Initial pass for any reveals already in the HTML
+window.observeReveals();
 
 // ── TYPING ANIMATION ──
 const typingEl = document.getElementById('typing-text');
 if (typingEl) {
-  const phrases = [
-    'Mechanical Engineer',
-    'Robotics Designer',
-    'Electronics Enthusiast',
-    'Mechanical Systems Architect',
-    'CAD & Simulation Expert'
-  ];
+  // Use phrases from data.js if available, otherwise fallback
+  const phrases = (typeof PORTFOLIO !== 'undefined' && PORTFOLIO.typingPhrases)
+    ? PORTFOLIO.typingPhrases
+    : ['Mechanical Engineer', 'Robotics Designer', 'Electronics Enthusiast'];
+
   let phraseIndex = 0, charIndex = 0, deleting = false;
 
   function type() {

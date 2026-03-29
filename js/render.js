@@ -174,4 +174,11 @@
     f.textContent = `© ${new Date().getFullYear()} ${D.name} — ${D.role}`;
   });
 
+  // ── RE-OBSERVE REVEALS ───────────────────────────────────
+  // Must run AFTER all content is injected so dynamically
+  // created .reveal elements get picked up by the observer
+  if (typeof window.observeReveals === 'function') {
+    window.observeReveals();
+  }
+
 })();
