@@ -3,7 +3,7 @@
 // ============================================================
 
 // biome-ignore lint/correctness/noUnusedVariables: used by render.js
-const PORTFOLIO = {
+var PORTFOLIO = {
 
   // ── PERSONAL ──────────────────────────────────────────────
   name:       "Marcus Imbigula",
@@ -36,6 +36,7 @@ const PORTFOLIO = {
     { number: 3,   suffix: "",  label: "Disciplines" },
     { number: 100, suffix: "%", label: "Passion" }
   ],
+
   // ── ABOUT TAGS ────────────────────────────────────────────
   tags: [
     { label: "Robotics",          accent: true  },
