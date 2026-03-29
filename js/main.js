@@ -28,13 +28,13 @@ const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinkItems.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
       });
     }
   });
 }, { threshold: 0.3 });
 
-sections.forEach(s => sectionObserver.observe(s));
+sections.forEach(s => { sectionObserver.observe(s); });
 
 // ── SCROLL REVEAL ──
 // Exposed globally so render.js can call it after injecting dynamic content
@@ -110,8 +110,8 @@ glow.style.cssText = `
 `;
 document.body.appendChild(glow);
 document.addEventListener('mousemove', e => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
+  glow.style.left = `${e.clientX}px`;
+  glow.style.top = `${e.clientY}px`;
 });
 
 // ── STAT COUNTER ANIMATION ──
@@ -133,7 +133,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const counters = entry.target.querySelectorAll('[data-count]');
       counters.forEach(counter => {
-        const target = parseInt(counter.dataset.count);
+        const target = parseInt(counter.dataset.count, 10);
         const suffix = counter.dataset.suffix || '';
         animateCounter(counter, target, suffix);
       });
