@@ -46,96 +46,8 @@
       <div class="blog-full-grid">
 
         <!-- Main Posts -->
-        <div class="blog-main-list">
-
-          <a href="#" class="blog-post-card reveal">
-            <div class="blog-post-meta">
-              <span class="blog-cat">Robotics</span>
-              <span class="blog-date">March 15, 2025</span>
-            </div>
-            <h2 class="blog-post-title">How I Built a 6-DOF Arm from Scratch: Lessons Learned</h2>
-            <p class="blog-post-excerpt">
-              Designing a robotic arm is part mechanical puzzle, part electrical headache, and fully
-              humbling. Here's an honest breakdown of what went wrong, what worked, and what I'd do
-              differently — from the linkage geometry to the motor driver PCB. There were three
-              complete redesigns and one magic smoke incident.
-            </p>
-            <div class="blog-post-footer">
-              <span class="blog-read-more">Read Article →</span>
-              <span class="blog-reading-time">12 min read</span>
-            </div>
-          </a>
-
-          <a href="#" class="blog-post-card reveal">
-            <div class="blog-post-meta">
-              <span class="blog-cat">Electronics</span>
-              <span class="blog-date">January 22, 2025</span>
-            </div>
-            <h2 class="blog-post-title">PCB Layout Rules I Wish I Knew Earlier</h2>
-            <p class="blog-post-excerpt">
-              Ground planes, trace width, and why impedance matching isn't just for RF engineers.
-              After three years of designing boards ranging from simple Arduino shields to 4-layer
-              motor controllers, here are the layout principles I now consider non-negotiable.
-            </p>
-            <div class="blog-post-footer">
-              <span class="blog-read-more">Read Article →</span>
-              <span class="blog-reading-time">8 min read</span>
-            </div>
-          </a>
-
-          <a href="#" class="blog-post-card reveal">
-            <div class="blog-post-meta">
-              <span class="blog-cat">Mechanical</span>
-              <span class="blog-date">November 8, 2024</span>
-            </div>
-            <h2 class="blog-post-title">FEA Is Not a Magic Box</h2>
-            <p class="blog-post-excerpt">
-              Garbage in, garbage out. Finite Element Analysis is one of the most powerful tools
-              in a mechanical engineer's toolkit — and one of the most misused. Here's how to set
-              up your simulations so the results actually mean something, and the questions you
-              should always ask before trusting a solver output.
-            </p>
-            <div class="blog-post-footer">
-              <span class="blog-read-more">Read Article →</span>
-              <span class="blog-reading-time">9 min read</span>
-            </div>
-          </a>
-
-          <a href="#" class="blog-post-card reveal">
-            <div class="blog-post-meta">
-              <span class="blog-cat">Robotics</span>
-              <span class="blog-date">September 3, 2024</span>
-            </div>
-            <h2 class="blog-post-title">Getting Started with ROS2: A Real Engineer's Perspective</h2>
-            <p class="blog-post-excerpt">
-              Most ROS2 tutorials assume you have a pristine Ubuntu install, infinite patience, and
-              no deadlines. This isn't that tutorial. Here's how I actually got productive with ROS2
-              on a real project, with all the workarounds I needed along the way.
-            </p>
-            <div class="blog-post-footer">
-              <span class="blog-read-more">Read Article →</span>
-              <span class="blog-reading-time">15 min read</span>
-            </div>
-          </a>
-
-          <a href="#" class="blog-post-card reveal">
-            <div class="blog-post-meta">
-              <span class="blog-cat">Design</span>
-              <span class="blog-date">July 17, 2024</span>
-            </div>
-            <h2 class="blog-post-title">The Case for Over-Engineering Your Prototypes</h2>
-            <p class="blog-post-excerpt">
-              Everyone says "keep it simple." But there's a strong argument for building your first
-              prototype to a higher spec than you think you need — especially when you're still
-              learning what the actual requirements are.
-            </p>
-            <div class="blog-post-footer">
-              <span class="blog-read-more">Read Article →</span>
-              <span class="blog-reading-time">6 min read</span>
-            </div>
-          </a>
-
-        </div>
+        <!-- Populated by data.js + render.js -->
+        <div class="blog-main-list" id="blog-list"></div>
 
         <!-- Sidebar -->
         <aside class="blog-sidebar">
@@ -200,6 +112,8 @@
     </ul>
   </footer>
 
+  <script src="../js/data.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/render.js"></script>
 </body>
 </html>

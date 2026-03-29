@@ -2,7 +2,6 @@
 //  PORTFOLIO DATA — Edit everything here, nowhere else.
 // ============================================================
 
-// biome-ignore lint/correctness/noUnusedVariables: used by render.js
 var PORTFOLIO = {
 
   // ── PERSONAL ──────────────────────────────────────────────
@@ -19,7 +18,6 @@ var PORTFOLIO = {
   ],
   tagline: "Building What Others Only Imagine",
 
-  // Typing animation phrases on the hero
   typingPhrases: [
     "Mechanical Engineer",
     "Robotics Designer",
@@ -29,10 +27,10 @@ var PORTFOLIO = {
     "CAD & Simulation Expert"
   ],
 
-  // ── STATS (hero section) ──────────────────────────────────
+  // ── STATS ─────────────────────────────────────────────────
   stats: [
     { number: 2,   suffix: "+", label: "Years Experience" },
-    { number: 5,  suffix: "+", label: "Projects Delivered" },
+    { number: 5,   suffix: "+", label: "Projects Delivered" },
     { number: 3,   suffix: "",  label: "Disciplines" },
     { number: 100, suffix: "%", label: "Passion" }
   ],
@@ -48,7 +46,7 @@ var PORTFOLIO = {
     { label: "Embedded Systems",  accent: false },
     { label: "ROS / ROS2",        accent: false },
     { label: "Python / C++",      accent: false },
-    { label: "3D Printing",       accent: false },
+    { label: "3D Printing",       accent: false }
   ],
 
   // ── SKILLS ────────────────────────────────────────────────
@@ -63,7 +61,7 @@ var PORTFOLIO = {
         { name: "CFD / Thermal Simulation",  level: "med"  },
         { name: "GD&T & Tolerancing",        level: "full" },
         { name: "Machining & Sheet Metal",   level: "med"  },
-        { name: "3D Printing / Prototyping", level: "full" },
+        { name: "3D Printing / Prototyping", level: "full" }
       ]
     },
     {
@@ -76,7 +74,7 @@ var PORTFOLIO = {
         { name: "Motion Planning",          level: "med"  },
         { name: "Sensor Fusion",            level: "med"  },
         { name: "Servo & Stepper Control",  level: "full" },
-        { name: "Computer Vision (OpenCV)", level: "med"  },
+        { name: "Computer Vision (OpenCV)", level: "med"  }
       ]
     },
     {
@@ -89,7 +87,7 @@ var PORTFOLIO = {
         { name: "Arduino / STM32 / ESP32",     level: "full" },
         { name: "RTOS / Bare Metal",           level: "med"  },
         { name: "Power Electronics",           level: "med"  },
-        { name: "Signal & System Analysis",    level: "full" },
+        { name: "Signal & System Analysis",    level: "full" }
       ]
     }
   ],
@@ -100,36 +98,38 @@ var PORTFOLIO = {
       period:  "May 2025 — Present",
       role:    "Robotics & Electronics Instructor",
       company: "Ubunifu College · Full-time",
-      desc:    "Leading design of automated mechanical systems for industrial applications. Responsible for end-to-end engineering: from concept design and FEA simulation to PCB layout, firmware, and system integration.",
-      tags:    ["SolidWorks", "ROS2", "Altium", "Team Lead"]
+      desc:    "Teaching robotics and electronics to the next generation of engineers. Designing curriculum, building hands-on projects, and guiding students through mechanical, electronic and software challenges.",
+      tags:    ["Robotics", "Electronics", "Teaching", "Curriculum Design"]
     },
     {
       period:  "Jan 2024 — May 2024",
-      role:    "Mechanical Engineering Internship",
+      role:    "Mechanical Engineering Intern",
       company: "Kenya Ports Authority · Internship",
-      desc:    "Designed precision mechanical components for aerospace applications. Ran FEA studies, managed vendor relationships, and ensured GD&T compliance across multi-part assemblies.",
-      tags:    ["FEA", "GD&T", "Fusion 360", "Aerospace"]
+      desc:    "Worked on maintenance and inspection of mechanical systems. Gained exposure to large-scale industrial equipment, documentation, and engineering processes within a port environment.",
+      tags:    ["Mechanical", "Maintenance", "Industrial Systems"]
     },
     {
       period:  "Oct 2023 — Dec 2023",
       role:    "Mechanical Engineering Intern",
       company: "KIRDI · Internship",
-      desc:    "Supported senior engineers on R&D projects. Built test rigs, wrote data acquisition scripts, and contributed to the mechanical design of a prototype UAV frame.",
-      tags:    ["Python", "Prototyping", "UAV"]
+      desc:    "Supported R&D projects at Kenya's Industrial Research and Development Institute. Contributed to prototyping, testing, and technical documentation across several engineering projects.",
+      tags:    ["R&D", "Prototyping", "KIRDI"]
     },
     {
       period:  "2021 — 2022",
       role:    "IBL Attachment",
       company: "The Technical University of Kenya · Attachment",
-      desc:    "Supported senior engineers on R&D projects. Built test rigs, wrote data acquisition scripts, and contributed to the mechanical design of a prototype UAV frame.",
-      tags:    ["Python", "Prototyping", "UAV"]
+      desc:    "Industry-based learning attachment as part of the undergraduate engineering programme. Gained practical exposure to real-world engineering workflows and professional environments.",
+      tags:    ["IBL", "Engineering", "TUK"]
     }
   ],
 
   // ── PROJECTS ──────────────────────────────────────────────
-  // Edit projects here. Optional detail-page fields (add to any project):
-  //   year, liveUrl, overview (array of paragraphs), model (STL path),
-  //   images (array of image paths), code or codeSnippet (see CONTENT-GUIDE.md)
+  // Optional detail-page fields per project:
+  //   year, liveUrl, overview (array of paragraphs),
+  //   model (path to STL/OBJ in assets/models/),
+  //   images (array of paths in assets/img/),
+  //   codeSnippet: { filename, lang, content }
 
   projects: [
     {
@@ -152,8 +152,8 @@ var PORTFOLIO = {
         "3D-printed structural components (PETG/CF)"
       ],
       stack:  ["ROS2", "C++", "SolidWorks", "KiCad"],
-      github: "https://github.com/yourusername",
-      link:   "#",
+      github: "",
+      link:   "#"
     },
     {
       emoji:    "🛞",
@@ -170,7 +170,7 @@ var PORTFOLIO = {
         "Integrated IMU + wheel odometry fusion"
       ],
       stack:  ["ROS", "SLAM", "Fusion 360"],
-      github: "https://github.com/yourusername",
+      github: "",
       link:   "#"
     },
     {
@@ -188,7 +188,7 @@ var PORTFOLIO = {
         "Overcurrent, overvoltage & thermal protection"
       ],
       stack:  ["KiCad", "STM32", "CAN FD"],
-      github: "https://github.com/yourusername",
+      github: "",
       link:   "#"
     },
     {
@@ -224,7 +224,7 @@ var PORTFOLIO = {
         "Deep sleep for battery life optimization"
       ],
       stack:  ["ESP32", "MQTT", "KiCad"],
-      github: "https://github.com/yourusername",
+      github: "",
       link:   "#"
     },
     {
