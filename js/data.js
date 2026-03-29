@@ -2,6 +2,7 @@
 //  PORTFOLIO DATA — Edit everything here, nowhere else.
 // ============================================================
 
+// biome-ignore lint/correctness/noUnusedVariables: consumed by render.js
 var PORTFOLIO = {
 
   // ── PERSONAL ──────────────────────────────────────────────
