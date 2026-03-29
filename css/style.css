@@ -1,6 +1,14 @@
 /* ── LOCAL FONTS ── */
 
 @font-face {
+  font-family: 'Computerist';
+  src: url('../fonts/Computerist.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'LimitBreak';
   src: url('../fonts/Limit Break.otf') format('opentype');
   font-weight: normal;
@@ -138,8 +146,8 @@
   --text2: #8a9ab0;
   --text3: #4a5a6e;
 
-  --font-hero:    'LimitBreak', 'CreatoDisplay', sans-serif;
-  --font-heading: 'CreatoDisplay', sans-serif;
+  --font-hero:    'Computerist', 'CreatoDisplay', sans-serif;
+  --font-heading: 'Computerist', 'CreatoDisplay', sans-serif;
   --font-mono:    'CaviarDreams', sans-serif;
   --font-body:    'CreatoDisplay', sans-serif;
 
