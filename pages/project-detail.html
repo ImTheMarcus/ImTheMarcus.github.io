@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/pages.css" />
   <link rel="stylesheet" href="../css/project-detail.css" />
-
-  <!-- Prism.js syntax highlighting -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
 </head>
@@ -33,184 +31,96 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="page-hero-inner">
-      <p class="section-label" id="detail-tag">Robotics</p>
-      <h1 class="section-title" id="detail-title" style="font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 0.8rem;">
-        Project Title
-      </h1>
+      <p class="section-label" id="detail-tag"></p>
+      <h1 class="section-title" id="detail-title" style="font-size:clamp(2rem,5vw,4rem); margin-bottom:0.8rem;"></h1>
       <div class="detail-meta" id="detail-meta"></div>
     </div>
   </div>
 
-  <!-- ── MAIN CONTENT ── -->
+  <!-- ── MAIN LAYOUT ── -->
   <div class="detail-layout">
 
-    <!-- LEFT: Main content -->
     <main class="detail-main">
 
-      <!-- ── 3D MODEL VIEWER ── -->
-      <section class="detail-section" id="section-3d">
+      <!-- ── 3D VIEWER (only shown if project has a model file) ── -->
+      <section class="detail-section" id="section-3d" style="display:none;">
         <div class="detail-section-label">
-          <span class="ds-icon">⬡</span> 3D Model Viewer
-          <span class="ds-badge">STL / SLDPRT / OBJ</span>
+          <span class="ds-icon">⬡</span> 3D Model
+          <span class="ds-badge" id="model-filename"></span>
         </div>
-
         <div class="viewer-container">
           <canvas id="model-canvas"></canvas>
-
-          <!-- Drop zone overlay -->
-          <div class="viewer-dropzone" id="viewer-dropzone">
-            <div class="dropzone-inner">
-              <div class="dropzone-icon">⬡</div>
-              <p class="dropzone-title">Drop a 3D file here</p>
-              <p class="dropzone-sub">Supports STL, OBJ — drag & drop or click to browse</p>
-              <label class="btn-primary" style="cursor:pointer; margin-top:1rem;">
-                Browse File
-                <input type="file" id="model-file-input" accept=".stl,.obj" style="display:none;" />
-              </label>
-              <p class="dropzone-note">SLDPRT / SLDASM → export as STL from SolidWorks first</p>
-            </div>
+          <div class="viewer-loading" id="viewer-loading">
+            <div class="loading-spinner"></div>
+            <span>Loading model...</span>
           </div>
-
-          <!-- Viewer controls (shown after model loads) -->
           <div class="viewer-controls" id="viewer-controls" style="display:none;">
             <button class="viewer-btn" id="btn-reset" title="Reset view">⟳</button>
             <button class="viewer-btn" id="btn-wireframe" title="Toggle wireframe">⬡</button>
             <button class="viewer-btn" id="btn-material" title="Cycle material">◑</button>
-            <span class="viewer-filename" id="viewer-filename"></span>
-          </div>
-
-          <!-- Loading indicator -->
-          <div class="viewer-loading" id="viewer-loading" style="display:none;">
-            <div class="loading-spinner"></div>
-            <span>Loading model...</span>
           </div>
         </div>
-
-        <p class="viewer-hint">
-          <strong>Note:</strong> SolidWorks files (.sldprt, .sldasm) cannot be opened directly in browsers.
-          Export from SolidWorks as <strong>STL</strong> (File → Save As → STL) then drop it here.
-        </p>
+        <p class="viewer-hint">Drag to orbit · Scroll to zoom · Two fingers to pan</p>
       </section>
 
-      <!-- ── DESCRIPTION ── -->
+      <!-- ── OVERVIEW ── -->
       <section class="detail-section">
-        <div class="detail-section-label">
-          <span class="ds-icon">≡</span> Overview
-        </div>
-        <div class="detail-prose" id="detail-desc">
-          <p>Project description goes here. Edit this in <code>pages/project-detail.html</code> or pull from <code>data.js</code>.</p>
-        </div>
+        <div class="detail-section-label"><span class="ds-icon">≡</span> Overview</div>
+        <div class="detail-prose" id="detail-desc"></div>
       </section>
 
-      <!-- ── CODE VIEWER ── -->
-      <section class="detail-section" id="section-code">
+      <!-- ── CODE VIEWER (only shown if project has code) ── -->
+      <section class="detail-section" id="section-code" style="display:none;">
         <div class="detail-section-label">
-          <span class="ds-icon">{'>'}</span> Code
-          <div class="code-tab-bar" id="code-tab-bar"></div>
+          <span class="ds-icon">&gt;_</span> Code
         </div>
-
         <div class="ide-window">
-          <!-- IDE Title bar -->
           <div class="ide-titlebar">
             <div class="ide-dots">
               <span class="dot red"></span>
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <span class="ide-filename" id="ide-active-filename">main.cpp</span>
-            <div class="ide-actions">
-              <button class="ide-btn" id="btn-copy-code" title="Copy code">⧉ Copy</button>
-              <label class="ide-btn" style="cursor:pointer;" title="Upload file">
-                ↑ Load File
-                <input type="file" id="code-file-input" accept=".c,.cpp,.h,.py,.js,.ts,.ino,.m,.yaml,.yml,.json,.txt,.md" style="display:none;" />
-              </label>
-            </div>
+            <span class="ide-filename" id="ide-filename"></span>
+            <button class="ide-btn" id="btn-copy-code">⧉ Copy</button>
           </div>
-
-          <!-- Line numbers + code -->
           <div class="ide-body">
             <div class="ide-line-nums" id="ide-line-nums"></div>
             <div class="ide-code-wrap">
-              <pre class="ide-pre"><code class="language-cpp" id="ide-code">// Your code will appear here.
-// Either paste it below, or click "Load File" above
-// to open a file directly from your computer.
-
-#include &lt;Arduino.h&gt;
-
-void setup() {
-  Serial.begin(115200);
-  Serial.println("Ready.");
-}
-
-void loop() {
-  // Your loop code here
-  delay(1000);
-}</code></pre>
+              <pre class="ide-pre"><code id="ide-code"></code></pre>
             </div>
           </div>
-
-          <!-- Paste area (hidden, for pasting code) -->
-          <div class="ide-paste-bar">
-            <span class="ide-paste-label">Paste code here ↓</span>
-            <select class="ide-lang-select" id="ide-lang-select">
-              <option value="cpp">C / C++</option>
-              <option value="python">Python</option>
-              <option value="javascript">JavaScript</option>
-              <option value="arduino">Arduino (.ino)</option>
-              <option value="matlab">MATLAB</option>
-              <option value="yaml">YAML</option>
-              <option value="json">JSON</option>
-              <option value="bash">Shell / Bash</option>
-              <option value="markup">XML / HTML</option>
-            </select>
-            <button class="ide-btn" id="btn-apply-paste">Apply</button>
-          </div>
-          <textarea class="ide-paste-area" id="ide-paste-area" placeholder="Paste your code here, select language above, then click Apply..."></textarea>
         </div>
       </section>
 
-      <!-- ── MEDIA (images / video) ── -->
-      <section class="detail-section">
-        <div class="detail-section-label">
-          <span class="ds-icon">▣</span> Media
-          <label class="ds-badge" style="cursor:pointer;">
-            + Add Images
-            <input type="file" id="media-input" accept="image/*,video/*" multiple style="display:none;" />
-          </label>
-        </div>
-        <div class="media-grid" id="media-grid">
-          <div class="media-placeholder">
-            <span>Drop images or click "+ Add Images" above</span>
-          </div>
-        </div>
+      <!-- ── MEDIA (only shown if project has images) ── -->
+      <section class="detail-section" id="section-media" style="display:none;">
+        <div class="detail-section-label"><span class="ds-icon">▣</span> Media</div>
+        <div class="media-grid" id="media-grid"></div>
       </section>
 
     </main>
 
-    <!-- RIGHT: Sidebar -->
+    <!-- ── SIDEBAR ── -->
     <aside class="detail-sidebar">
-
       <div class="sidebar-card">
         <h3 class="sidebar-card-title">Project Info</h3>
         <div class="info-list" id="sidebar-info"></div>
       </div>
-
       <div class="sidebar-card">
         <h3 class="sidebar-card-title">Tech Stack</h3>
         <div class="stack-list" id="sidebar-stack"></div>
       </div>
-
       <div class="sidebar-card">
         <h3 class="sidebar-card-title">Key Features</h3>
         <ul class="feature-list" id="sidebar-features"></ul>
       </div>
-
       <div class="sidebar-card">
         <h3 class="sidebar-card-title">Links</h3>
         <div class="sidebar-links" id="sidebar-links"></div>
       </div>
-
     </aside>
+
   </div>
 
   <!-- ── FOOTER ── -->
@@ -223,9 +133,7 @@ void loop() {
     </ul>
   </footer>
 
-  <!-- Three.js for 3D viewing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!-- Prism.js syntax highlighting -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
@@ -234,8 +142,6 @@ void loop() {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
-
   <script src="../js/data.js"></script>
   <script src="../js/render.js"></script>
   <script src="../js/main.js"></script>
