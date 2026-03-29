@@ -79,7 +79,7 @@
   set('projects-grid', D.projects.map((p, i) => `
     <div class="project-full-card reveal${i % 3 > 0 ? ` reveal-delay-${i % 3}` : ''}"
          data-category="${p.category}"
-         onclick="window.location='project-detail.html?id=${i}'"
+         data-id="${i}"
          style="cursor:pointer;">
       <div class="project-full-thumb">${p.emoji}</div>
       <div class="project-full-body">
@@ -99,7 +99,7 @@
         </div>
         <div class="project-links">
           ${p.github ? `<a href="${p.github}" target="_blank" class="project-link" onclick="event.stopPropagation()">GitHub</a>` : ''}
-          <a href="project-detail.html?id=${i}" class="project-link">Open Project →</a>
+          <a href="project-detail.html?id=${i}" class="project-link" onclick="event.stopPropagation()">Open Project →</a>
         </div>
       </div>
     </div>`).join(''));
