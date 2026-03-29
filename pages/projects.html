@@ -78,7 +78,7 @@
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(b => { b.classList.remove('active'); });
         btn.classList.add('active');
         const filter = btn.dataset.filter;
 
@@ -99,7 +99,7 @@
       if (e.target.closest('a')) return;
       const id = card.dataset.id;
       if (id !== undefined) {
-        window.location.href = `project-detail.html?id=${id}`;
+        window.location.href = `projectdetail.html?id=${id}`;
       }
     });
   </script>
