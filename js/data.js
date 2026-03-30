@@ -94,34 +94,51 @@ var PORTFOLIO = {
   ],
 
   // ── WORK HISTORY ──────────────────────────────────────────
-  work: [
+work: [
     {
-      period:  "May 2025 — Present",
-      role:    "Robotics & Electronics Instructor",
-      company: "Ubunifu College · Full-time",
-      desc:    "Teaching robotics and electronics to the next generation of engineers. Designing curriculum, building hands-on projects, and guiding students through mechanical, electronic and software challenges.",
+      period:  "Jul 2025 — Present",
+      role:    "Robotics and Automation Instructor",
+      company: "Ubunifu College",
+      desc: [
+        "Instruct and guide cohorts of [Number] students through comprehensive robotics coursework and hands-on practical exercises.",
+        "Troubleshoot and resolve complex electrical and circuitry issues in real-time during laboratory sessions.",
+        "Enforce strict safety protocols within the electronics workshop, maintaining a secure and hazard-free learning environment.",
+        "Consult with external clients to design, test, and develop customized automated digital circuit solutions."
+      ],
       tags:    ["Robotics", "Electronics", "Teaching", "Curriculum Design"]
     },
     {
-      period:  "Jan 2024 — May 2024",
+      period:  "Jan 2024 — Apr 2024",
       role:    "Mechanical Engineering Intern",
-      company: "Kenya Ports Authority · Internship",
-      desc:    "Worked on maintenance and inspection of mechanical systems. Gained exposure to large-scale industrial equipment, documentation, and engineering processes within a port environment.",
-      tags:    ["Mechanical", "Maintenance", "Industrial Systems"]
+      company: "Kenya Ports Authority",
+      desc: [
+        "Executed routine mechanical and electrical inspections on heavy machinery (gantry machines, top loaders, terminal trucks), reducing equipment downtime by [Number]%.",
+        "Diagnosed mechanical faults and optimized equipment performance to ensure peak operational efficiency.",
+        "Maintained comprehensive and accurate maintenance logs, inspection records, and repair documentation.",
+        "Adhered strictly to rigorous field safety policies during all hands-on maintenance and repair operations."
+      ],
+      tags:    ["Mechanical Inspection", "Maintenance", "Data Keeping"]
     },
     {
       period:  "Oct 2023 — Dec 2023",
       role:    "Mechanical Engineering Intern",
-      company: "KIRDI · Internship",
-      desc:    "Supported R&D projects at Kenya's Industrial Research and Development Institute. Contributed to prototyping, testing, and technical documentation across several engineering projects.",
-      tags:    ["R&D", "Prototyping", "KIRDI"]
+      company: "KIRDI",
+      desc: [
+        "Integrated electrical circuits with automation systems, successfully streamlining existing production processes.",
+        "Designed custom machine components using SolidWorks, translating complex technical specifications into precise 3D models.",
+        "Collaborated within a cross-functional engineering team to execute mechanical design projects from initial concept to completion."
+      ],
+      tags:    ["R&D", "Prototyping", "CNC Machining"]
     },
     {
       period:  "2021 — 2022",
       role:    "IBL Attachment",
-      company: "The Technical University of Kenya · Attachment",
-      desc:    "Industry-based learning attachment as part of the undergraduate engineering programme. Gained practical exposure to real-world engineering workflows and professional environments.",
-      tags:    ["IBL", "Engineering", "TUK"]
+      company: "The Technical University of Kenya",
+      desc: [
+        "Industry-based learning attachment as part of the undergraduate engineering programme.",
+        "Gained practical exposure to real-world engineering workflows and professional environments."
+      ],
+      tags:    ["Machine Operation", "Engineering", "Workshop Safety"]
     }
   ],
 

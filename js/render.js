@@ -110,7 +110,9 @@
       <p class="timeline-date">${w.period}</p>
       <h3 class="timeline-role">${w.role}</h3>
       <p class="timeline-company">${w.company}</p>
-      <p class="timeline-desc">${w.desc}</p>
+      <ul class="timeline-desc">
+        ${w.desc.map(point => `<li>${point}</li>`).join('')}
+      </ul>
       <div class="timeline-tags">
         ${w.tags.map(t => `<span class="tag">${t}</span>`).join('')}
       </div>
