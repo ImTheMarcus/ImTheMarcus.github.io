@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Marcus Imbigula</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/project-detail.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a href="../index.html" class="nav-logo">MGI<span>.eng</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="../index.html#work">Experience</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="blog.html" class="nav-cta">← All Posts</a>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ── POST HERO ── -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-inner">
+      <p class="section-label" id="post-category"></p>
+      <h1 class="section-title" id="post-title" style="font-size:clamp(1.8rem,4vw,3.5rem); margin-bottom:0.8rem; max-width:800px;"></h1>
+      <div class="detail-meta" id="post-meta"></div>
+    </div>
+  </div>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="detail-layout">
+
+    <main class="detail-main">
+
+      <!-- ── COVER IMAGE ── -->
+      <div id="post-cover" style="display:none;">
+        <img id="post-cover-img" src="" alt="" style="width:100%; border:1px solid var(--border); display:block;" />
+      </div>
+
+      <!-- ── ARTICLE BODY ── -->
+      <section class="detail-section">
+        <div class="detail-section-label"><span class="ds-icon">≡</span> Article</div>
+        <div class="detail-prose blog-prose" id="post-body"></div>
+      </section>
+
+      <!-- ── CODE BLOCK (optional) ── -->
+      <section class="detail-section" id="section-code" style="display:none;">
+        <div class="detail-section-label"><span class="ds-icon">&gt;_</span> Code</div>
+        <div class="ide-window">
+          <div class="ide-titlebar">
+            <div class="ide-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="ide-filename" id="ide-filename"></span>
+            <button class="ide-btn" id="btn-copy-code">⧉ Copy</button>
+          </div>
+          <div class="ide-body">
+            <div class="ide-line-nums" id="ide-line-nums"></div>
+            <div class="ide-code-wrap">
+              <pre class="ide-pre"><code id="ide-code"></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── IMAGE GALLERY (optional) ── -->
+      <section class="detail-section" id="section-media" style="display:none;">
+        <div class="detail-section-label"><span class="ds-icon">▣</span> Images</div>
+        <div class="media-grid" id="media-grid"></div>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="detail-sidebar">
+
+      <div class="sidebar-card">
+        <h3 class="sidebar-card-title">Post Info</h3>
+        <div class="info-list" id="sidebar-info"></div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3 class="sidebar-card-title">More Posts</h3>
+        <div id="related-posts"></div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p class="footer-copy"></p>
+    <ul class="footer-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/render.js"></script>
+  <script src="../js/blog-post.js"></script>
+</body>
+</html>

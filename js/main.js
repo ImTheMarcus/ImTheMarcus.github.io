@@ -85,19 +85,45 @@ if (typingEl) {
   type();
 }
 
-// ── CONTACT FORM ──
+// ── CONTACT FORM (Formspree) ──
 const contactForm = document.getElementById('contact-form');
-contactForm?.addEventListener('submit', (e) => {
+contactForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const btn = contactForm.querySelector('.btn-primary');
-  const original = btn.textContent;
-  btn.textContent = 'Message Sent ✓';
-  btn.style.background = 'var(--accent2)';
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.style.background = '';
-    contactForm.reset();
-  }, 3000);
+  const btn    = document.getElementById('form-submit-btn');
+  const status = document.getElementById('form-status');
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const data = new FormData(contactForm);
+
+  try {
+    const res = await fetch(contactForm.action, {
+      method:  'POST',
+      body:    data,
+      headers: { Accept: 'application/json' }
+    });
+
+    if (res.ok) {
+      status.style.display    = 'block';
+      status.style.color      = 'var(--accent2)';
+      status.style.fontFamily = 'var(--font-mono)';
+      status.style.fontSize   = '0.8rem';
+      status.style.padding    = '0.8rem 0';
+      status.textContent      = '✓ Message sent — I\'ll be in touch soon.';
+      contactForm.reset();
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = 'var(--accent2)';
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch {
+    status.style.display  = 'block';
+    status.style.color    = 'var(--accent3)';
+    status.textContent    = '✕ Something went wrong. Email me directly at imbigulamarcus99@gmail.com';
+    btn.textContent       = 'Send Message →';
+    btn.disabled          = false;
+  }
 });
 
 // ── CURSOR GLOW ──

@@ -110,9 +110,7 @@
       <p class="timeline-date">${w.period}</p>
       <h3 class="timeline-role">${w.role}</h3>
       <p class="timeline-company">${w.company}</p>
-      <ul class="timeline-desc">
-        ${w.desc.map(point => `<li>${point}</li>`).join('')}
-      </ul>
+      <p class="timeline-desc">${w.desc}</p>
       <div class="timeline-tags">
         ${w.tags.map(t => `<span class="tag">${t}</span>`).join('')}
       </div>
@@ -121,7 +119,7 @@
   // ── BLOG PREVIEW (index — first 3) ──────────────────────
   const bp = D.posts.slice(0, 3);
   set('blog-preview', `
-    <a href="pages/blog.html" class="blog-card featured">
+    <a href="pages/blog-post.html?id=0" class="blog-card featured">
       <div class="blog-card-meta">
         <span class="blog-cat">${bp[0].category}</span>
         <span class="blog-date">${bp[0].date}</span>
@@ -130,8 +128,8 @@
       <p class="blog-card-excerpt">${bp[0].excerpt}</p>
       <span class="blog-read-more">Read Article →</span>
     </a>
-    ${bp.slice(1).map(p => `
-      <a href="pages/blog.html" class="blog-card">
+    ${bp.slice(1).map((p, i) => `
+      <a href="pages/blog-post.html?id=${i + 1}" class="blog-card">
         <div class="blog-card-meta">
           <span class="blog-cat">${p.category}</span>
           <span class="blog-date">${p.date}</span>
@@ -142,8 +140,8 @@
       </a>`).join('')}`);
 
   // ── FULL BLOG LIST ──────────────────────────────────────
-  set('blog-list', D.posts.map(p => `
-    <a href="${p.link}" class="blog-post-card reveal">
+  set('blog-list', D.posts.map((p, i) => `
+    <a href="blog-post.html?id=${i}" class="blog-post-card reveal">
       <div class="blog-post-meta">
         <span class="blog-cat">${p.category}</span>
         <span class="blog-date">${p.date}</span>

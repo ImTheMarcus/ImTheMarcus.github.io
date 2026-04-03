@@ -150,24 +150,27 @@
           </div>
         </div>
 
-        <form class="contact-form reveal reveal-delay-2" id="contact-form">
+        <form class="contact-form reveal reveal-delay-2" id="contact-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
           <div class="form-group">
             <label class="form-label">Name</label>
-            <input type="text" class="form-input" placeholder="Your name" required />
+            <input type="text" name="name" class="form-input" placeholder="Your name" required />
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="your@email.com" required />
+            <input type="email" name="email" class="form-input" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
             <label class="form-label">Subject</label>
-            <input type="text" class="form-input" placeholder="What's this about?" required />
+            <input type="text" name="subject" class="form-input" placeholder="What's this about?" required />
           </div>
           <div class="form-group">
             <label class="form-label">Message</label>
-            <textarea class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+            <textarea name="message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary">Send Message →</button>
+          <div id="form-status" style="display:none;"></div>
+          <button type="submit" class="btn-primary" id="form-submit-btn">Send Message →</button>
         </form>
       </div>
     </div>
